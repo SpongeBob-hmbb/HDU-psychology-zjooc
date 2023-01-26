@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+%                    *********************
+%                     **** 四项选择题 ****
+%                    *********************
+%      用法: \choice{ }{ }{ }{ }
+ 
+\newcommand{\fourch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{4}{@{}p{0.25\textwidth}}}(A)~#1 & (B)~#2 & (C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\twoch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(A)~#1 & (B)~#2\end{tabular}\\\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\onech}[4]{%~\hfill(\qquad)\\
+(A)~#1 \\ (B)~#2 \\ (C)~#3 \\ (D)~#4}
+ 
+\newlength\widthcha
+\newlength\widthchb
+\newlength\widthchc
+\newlength\widthchd
+\newlength\widthch
+\newlength\tabmaxwidth
+\setlength\tabmaxwidth{1\textwidth}
+\newlength\fourthtabwidth
+\setlength\fourthtabwidth{0.25\textwidth}
+\newlength\halftabwidth
+\setlength\halftabwidth{0.5\textwidth}
+ 
+\newcommand{\choice}[4]{\settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}
+    \settowidth\widthchb{BM.#2}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{CM.#3}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{DM.#4}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \ifthenelse{\widthch<\fourthtabwidth}{\fourch{#1}{#2}{#3}{#4}}
+    {\ifthenelse{\widthch<\halftabwidth\and\widthch>\fourthtabwidth}{\twoch{#1}{#2}{#3}{#4}}
+        {\onech{#1}{#2}{#3}{#4}}}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{大学生心理健康教育 \\ {第一讲}}
+\author{派大星}
+\date{\today}
+\begin{document}
+		\maketitle
+	\subsection*{单选题}
+	\begin{enumerate}
+		\item 下列说法错误的是(A)
+		
+		\choice{偏离正常的少数派为异常}{社会适应标准是一个主观的标准
+		}{行为规范和行为能力是社会适应能力的重要标志}{社会适应标准以社会上大部分人的行为判断心理是否异常的依据}		
+		\item 影响心理健康的社会环境因素不包括(D)
+		
+		\choice{家庭因素}{社会因素}{学校因素}{卫生因素}
+		
+		\item 关于心理测量的说法，错误的是(A)
+		
+		\choice{心理测量结果不能为临床诊断提供依据}{心理测量的结果再解释是需要慎重对待}{心理测量中处于最极端5\%的人群不一定为心理异常}{心理测量是将心理现象特别是个性特征量化的常用方法}
+		
+	\end{enumerate}
+	\subsection*{多选题}
+	\begin{enumerate}
+	\item 下列哪些说法是正确的？(ABC)
+	
+	\choice{人人都遇到过心理问题
+	}{心理健康与心理问题是动态的变化的
+}{简单的心理问题，一次心理咨询就可以解决}{纪律道德思想问题与心理健康问题毫无关系
+}	
+	
+	\item 心理咨询师在心理咨询的过程中要注意(CD)
+	
+	\choice{引导来访者的价值观，符合当前社会的主流价值观}{不得向任何人透露来访者的一切信息和陈述内容
+	}{道德和法律的惩罚并不是心理咨询师的工作职责}{不对来访者采取批评教育的方式进行互动和沟通}
+	
+	\item 下面哪些描述是错误的？(ABC)
+	
+	\choice{心理疾病的康复是很快的}{心理健康就是没有任何心理问题}{所有心理问题都可以自我解决}{心理疾病就像感冒发烧一样，随时都可能发生}
+	
+	\item 有关心理健康标准，下列描述正确的是(ACD)
+	
+	\choice{心理健康的标准是一种理想，制度}{心理健康的标准是永恒不变的}{心理不健康与不健康的心理行为是两个不同的概念}{心理健康与不健康并不是一个泾渭分明的对立面，而是一种连续状态}
+	
+	\item 评定心理异常的标准有哪些(ABCD)
+	
+	\choice{主观体验标准}{统计学标准}{心理学标准}{社会适应标准}
+	
+	\item 一般心理问题与严重心理问题的区别有(ABCD)
+	
+	\choice{持续时间不同}{启发的原因不同}{内容有无充分泛化的区别}{社会功能受损的程度不同}
+	
+	\item 下列属于判断心理异常的心理学标准有(BCD)
+	
+	\choice{具备社会适应能力}{主观世界与客观世界相统一}{心理活动的内在协调性}{人格的相对稳定性}
+	
+	\item 关于心理咨询，下列说法正确的是(AC)
+	
+	\choice{心理咨询师通过谈话和沟通来解决问题的}{心理咨询师咨询师为来访者提出解决方案}{心理咨询师咨询师为来访者提出解决方案}{心理咨询会帮助来访者解决所有心理问题
+	}
+
+	\end{enumerate}
+	\subsection*{判断题}
+	\begin{enumerate}
+		\item 人的心理活动或心理健康状况是不能遗传的\hfill 正确
+		
+		\item 一次心理咨询就可以解决所有心理问题\hfill 错误
+		
+		\item 在异常心理的划分标准中比较客观准确，但应用范围比较狭隘的是临床诊断标准\hfill 正确
+
+		\item 心理的正常和异常在人群中的分布是一个连续体，并不存在把两者完全分开的绝对标准\hfill 正确
+
+		\item 保密原则是心理咨询的一个基本守则，所以所有情况下咨询师都应该遵守\hfill 错误
+
+		\item 精神病就是神经病\hfill 错误
+
+		\item 癌症高血压心脏病都是生理疾病和心理没有关系\hfill 错误
+
+		\item 心理咨询实质是助人自助\hfill 正确
+
+		\item 心理健康和心理不健康都属于心理正常的范围之内\hfill 正确
+
+	\end{enumerate}
+\end{document}
