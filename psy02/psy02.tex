@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+%                    *********************
+%                     **** 四项选择题 ****
+%                    *********************
+%      用法: \choice{ }{ }{ }{ }
+ 
+\newcommand{\fourch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{4}{@{}p{0.25\textwidth}}}(A)~#1 & (B)~#2 & (C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\twoch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(A)~#1 & (B)~#2\end{tabular}\\\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\onech}[4]{%~\hfill(\qquad)\\
+(A)~#1 \\ (B)~#2 \\ (C)~#3 \\ (D)~#4}
+ 
+\newlength\widthcha
+\newlength\widthchb
+\newlength\widthchc
+\newlength\widthchd
+\newlength\widthch
+\newlength\tabmaxwidth
+\setlength\tabmaxwidth{1\textwidth}
+\newlength\fourthtabwidth
+\setlength\fourthtabwidth{0.25\textwidth}
+\newlength\halftabwidth
+\setlength\halftabwidth{0.5\textwidth}
+ 
+\newcommand{\choice}[4]{\settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}
+    \settowidth\widthchb{BM.#2}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{CM.#3}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{DM.#4}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \ifthenelse{\widthch<\fourthtabwidth}{\fourch{#1}{#2}{#3}{#4}}
+    {\ifthenelse{\widthch<\halftabwidth\and\widthch>\fourthtabwidth}{\twoch{#1}{#2}{#3}{#4}}
+        {\onech{#1}{#2}{#3}{#4}}}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{大学生心理健康教育 \\ {第二讲}}
+\author{派大星}
+\date{\today}
+\begin{document}
+		\maketitle
+	\subsection*{单选题}
+	\begin{enumerate}
+		\item 一般而言，一个人的姓名性别等属于(A)
+		
+		\choice{公开的自我}{秘密的自我}{盲目的自我}{未知的自我}
+			
+		\item 以下哪种效应属于自我实现语言的典型例子(D)
+
+		\choice{首因效应}{破窗效应}{路西法效应}{皮格马利翁效应}
+		
+		\item 通过与他人的行为对照情况的对比，发现自我认识的错误，这种方式属于()
+		
+		\choice{间接的自我评价}{直接的自我评价}{积极的自我评价}{消极的自我评价}
+		
+		\item 马西亚提出的青少年同一性发展的4种情形，他们分别是(B)
+		
+		\choice{同一性拒斥，同一性分散，同一性停止，同一性达成}{同一性拒斥，同一性分散，同一性延缓，同一性达成}{同一性拒斥，同一性分散，同一级延缓，同一性完整}{同一性拒斥，同一性混乱，同一性停滞，同一性达成}
+		
+		\item 人们创造高估周围人对自己外表和行为的关注度，也就是说人们往往把自己视为一切的中心，并且不自觉地高估别人对我们的注意程度，这种现象心理学家称之为(C)
+		
+		\choice{巴纳姆效应}{皮格马利翁效应}{焦点效应}{高估效应}
+		
+		\item 悦纳自己主要指的是(B)
+		
+		\choice{悦纳投射的自我}{悦纳现实的自我}{悦纳理想的自我}{悦纳想象的自我}
+		\item 关于气质下列说法不正确的是(D)
+		
+		\choice{气质是天生的}{气质不分好坏之分}{气质与神经活动的特性有关}{气质与个人的社会价值和成就高低有关}
+		
+		\item 以下哪种方式不能对增强自信心起积极作用(B)
+		
+		\choice{不要过多的指责别人}{经常用酒精壮胆提神}{为人坦诚，不要不懂装懂}{避免自己处于一种不利的环境中}
+	\end{enumerate}
+	\subsection*{多选题}
+	\begin{enumerate}
+		\item 下列哪些表现属于习得性无助(ABCD)
+	
+		\choice{自我归因消极}{自我评价降低}{动机水平下降}{沮丧情绪弥漫}
+	
+		\item 下列哪些属于积极自我对话的构建方法(ACD)
+
+		\choice{肯定自己是需要的，而不是不需要的}{始终用将来时态而不是过去时态进行对话}{建立肯定积极的对话，然后经常性进行强化}{增强与家人友人的联系，帮助他人建立肯定积极的对话}
+	
+		\item 下列哪些归因方式属于消极归因(ABC)
+	
+		\choice{英语4级通过是因为我运气好而已}{期末考试失败是因为我能力不行}{课程测试通过是因为题目更好简单}{期中考试失败是因为我努力不太够}
+	
+		\item 小伟没有通过英语自己考试，他在心里想我能力不行，这属于什么类型的自我归因(BC)
+
+		\choice{外部归因积极归因}{内部归因}{消极归因}{积极归因}
+	
+		\item 气质与性格的区别在于(ABCD)
+	
+		\choice{气质反映的是心理活动的动力特征，性格是对现实的态度和行为方式}{气质没有好坏之分，性格有明显的社会道德评价意义}{气质更多地表现人格的生物属性，性格更多的体现了人格的社会属性}{个体之间人格差异的核心是性格的差异}
+	
+		\item 马西亚认为同一性举止的个体，其心理与行为表现有(ABCD)
+	
+		\choice{较易附和他人，缺少自主}{喜欢有组织的有秩序的生活}{较少焦虑，但比较刻板和肤浅}{在同性和异性中都缺少亲密的关系}
+	
+		\item 弗洛伊德的人格结构包括哪些部分(ABC)
+	
+		\choice{本我}{自我}{超我}{镜我}
+	
+		\item 下列哪些属于低自行车可能会具有的特点(ABCD)
+	
+		\choice{放大自己的缺点并反复强调，对待他人的批评尤为敏感}{会不自觉的到讨好他，认为自己不够好}{自己没有能力，配不上自己身边的人}{为了自己没有的错误道歉，借此希望给他人留下良好的印象}
+
+	\end{enumerate}
+	\subsection*{判断题}
+	\begin{enumerate}
+		\item 乔韩窗口理论提出每个人的自我都有4个部分，分别是公开的自我隐藏的自我积极的自我消极的自我\hfill 正确
+		
+		\item 自我实现语言也叫自证预言，是指我们对待他人的方式会影响到他们的行为，并最终影响他们对自己的评价\hfill 正确
+		
+		\item 当一个人能正确使用我这个字时，就标志着人的自我意识进入了一个崭新的阶段\hfill 正确
+
+		\item 认识自己是一个我们在青春期就能完成的任务\hfill 错误
+
+	\end{enumerate}
+\end{document}
