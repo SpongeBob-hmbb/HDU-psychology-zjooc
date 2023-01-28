@@ -1,0 +1,128 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+%                    *********************
+%                     **** 四项选择题 ****
+%                    *********************
+%      用法: \choice{ }{ }{ }{ }
+ 
+\newcommand{\fourch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{4}{@{}p{0.25\textwidth}}}(A)~#1 & (B)~#2 & (C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\twoch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(A)~#1 & (B)~#2\end{tabular}\\\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\onech}[4]{%~\hfill(\qquad)\\
+(A)~#1 \\ (B)~#2 \\ (C)~#3 \\ (D)~#4}
+ 
+\newlength\widthcha
+\newlength\widthchb
+\newlength\widthchc
+\newlength\widthchd
+\newlength\widthch
+\newlength\tabmaxwidth
+\setlength\tabmaxwidth{1\textwidth}
+\newlength\fourthtabwidth
+\setlength\fourthtabwidth{0.25\textwidth}
+\newlength\halftabwidth
+\setlength\halftabwidth{0.5\textwidth}
+ 
+\newcommand{\choice}[4]{\settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}
+    \settowidth\widthchb{BM.#2}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{CM.#3}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{DM.#4}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \ifthenelse{\widthch<\fourthtabwidth}{\fourch{#1}{#2}{#3}{#4}}
+    {\ifthenelse{\widthch<\halftabwidth\and\widthch>\fourthtabwidth}{\twoch{#1}{#2}{#3}{#4}}
+        {\onech{#1}{#2}{#3}{#4}}}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{大学生心理健康教育 \\ {第三讲}}
+\author{派大星}
+\date{\today}
+\begin{document}
+		\maketitle
+	\subsection*{单选题}
+	\begin{enumerate}
+		\item 北方人厚道，南方人精明，属于(B)
+		
+		\choice{首因效应}{刻板效应}{光环效应}{投射效应}
+			
+		\item 首因效应和近因效应表明，对(C)印象的形成有重要影响。
+
+		\choice{信息内容}{信息的数量}{信息顺序}{具体的真实性}
+		
+		\item 以下哪条不属于人际交往的心理原则(B)
+		
+		\choice{互惠效应}{交易原则}{情境控制原则}{自我价值保护原则}
+		
+		\item 关于孤独心理，下列说法不正确的是(D)
+		
+		\choice{孤独是很多人都曾有过的消极体验}{孤独给予个体深入认识自我的机会}{孤独带来的不是更多的来源与制与恐惧}{孤独与孤单、孤僻、独处在本质上是相同的}
+	\end{enumerate}
+	\subsection*{多选题}
+	\begin{enumerate}
+		\item 在人际交往中最简单的付出是对他人的称赞，下列说法正确的是(ABCD)
+	
+		\choice{过于频繁的称赞会降低其价值}{真正的语气和表情会增加称赞的可信度}{称赞具体些好，而不是笼统的说很不错}{与及时的恭维相比，人们更加看重事后的回顾}
+	
+		\item 美国人类学教授霍尔将人际距离划分为哪几种类型？(ABD)
+
+		\choice{亲密距离}{个人距离}{安全距离}{公共距离}
+	
+		\item 嫉妒产生的原因包括(BCD)
+	
+		\choice{性格内向}{自私狭隘}{斤斤计较}{虚荣心过强}
+	
+		\item 在人际交往中，怎样认可别人使对方觉得自己重要(ABCD)
+
+		\choice{倾听他们}{赞许和欣赏他们}{尽可能经常使用他们的姓名和照片}{关注团体的每一个人，而不只是领导或发言人}
+	
+		\item 下列哪些现象是接近因素在人际吸引中起作用的写照(ABC)
+	
+		\choice{青梅竹马}{远亲不如近邻}{近水楼台先得月}{酒逢知己千杯少}
+	
+		\item 下列哪些表现属于不恰当的交谈方式(ABCD)
+	
+		\choice{连续发问，以致他人难以应付}{随便打断他人讲话，扰乱人家的思路}{老是将话题转移到自己感兴趣的方面去}{因为自己注意力不集中，致使他人重复谈过的话题}
+	
+		\item 下列哪些做法可以给人留下良好的第一印象(ABCD)
+	
+		\choice{微笑}{真诚的表达自己的想法}{聊聊符合别人兴趣的话题}{做一个耐心的听众，鼓励别人谈自己}
+	
+		\item 下列哪些做法有助于建设性处理人际冲突(ABCD)
+	
+		\choice{对他人尊重}{贴切地表达真实的想法}{控制自己的冲动，设身处地的给予对方反馈}{关注并表达自己情绪情感}
+		
+		\item 在人际交往中恰当的做法是(ABCD)
+		
+		\choice{勇于面对自己的不完美}{尊重人与人之间的差异性}{使用第一人称，“我”，“我们”表达观点}{不要直接怪罪指责和抱怨别人}
+
+	\end{enumerate}
+	\subsection*{判断题}
+	\begin{enumerate}
+		\item 在人际交往中，个性吸引力和能力吸引力很重要，外貌吸引力可有可无\hfill 错误
+		
+		\item 再好的朋友之间也要适当的保持距离\hfill 正确
+		
+		\item 自我暴露是指把有关自己个人的信息全部告诉别人，与他人共享自己的感受和信念\hfill 错误
+
+		\item 美国社会学家霍曼斯认为人际交往的本质是一种社会交往过程\hfill 正确
+
+		\item 在倾听他人时，为了表达关注，我们需要紧紧地盯住对方的双眼不放\hfill 错误
+
+		\item 大学期间是发展亲密关系的重要时期，需要多与他人交往而尽量避免独处\hfill 错误
+
+		\item 一个人在人际交往中表现的太过完美，可能会适得其反，不受欢迎\hfill 正确
+
+
+	\end{enumerate}
+\end{document}
