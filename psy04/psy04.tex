@@ -1,0 +1,129 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+%                    *********************
+%                     **** 四项选择题 ****
+%                    *********************
+%      用法: \choice{ }{ }{ }{ }
+ 
+\newcommand{\fourch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{4}{@{}p{0.25\textwidth}}}(A)~#1 & (B)~#2 & (C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\twoch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(A)~#1 & (B)~#2\end{tabular}\\\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\onech}[4]{%~\hfill(\qquad)\\
+(A)~#1 \\ (B)~#2 \\ (C)~#3 \\ (D)~#4}
+ 
+\newlength\widthcha
+\newlength\widthchb
+\newlength\widthchc
+\newlength\widthchd
+\newlength\widthch
+\newlength\tabmaxwidth
+\setlength\tabmaxwidth{1\textwidth}
+\newlength\fourthtabwidth
+\setlength\fourthtabwidth{0.25\textwidth}
+\newlength\halftabwidth
+\setlength\halftabwidth{0.5\textwidth}
+ 
+\newcommand{\choice}[4]{\settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}
+    \settowidth\widthchb{BM.#2}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{CM.#3}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{DM.#4}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \ifthenelse{\widthch<\fourthtabwidth}{\fourch{#1}{#2}{#3}{#4}}
+    {\ifthenelse{\widthch<\halftabwidth\and\widthch>\fourthtabwidth}{\twoch{#1}{#2}{#3}{#4}}
+        {\onech{#1}{#2}{#3}{#4}}}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{大学生心理健康教育 \\ {第四讲}}
+\author{派大星}
+\date{\today}
+\begin{document}
+		\maketitle
+	\subsection*{单选题}
+	\begin{enumerate}
+		\item 少男少女的组织恋爱一般属于爱情三角形理论中的哪种类型(C)
+		
+		\choice{浪漫的爱}{喜欢的爱}{迷恋的爱}{愚昧的爱}
+			
+		\item 爱情三角形理论认为，随着时间的推移，在爱情后期为让亲密关系进入稳定状态的因素是(D)
+
+		\choice{依恋}{激情}{亲密}{承诺}
+		
+		\item 梦里寻他千百度，蓦然回首，那人却在灯火阑珊处，这最有可能发生在爱情发生发展的哪个阶段(A)
+		
+		\choice{寻找梦中情人}{求爱与接受期}{热恋期}{心理平衡期}
+		
+		\item 如果我怀疑我爱的人跟别人在一起，我的神经就紧张，这是(C)的爱
+		
+		\choice{迷恋式}{好朋友式}{占有式}{浪漫式}
+		
+		\item 根据斯滕伯格的爱情三角理论，只有承诺，缺乏亲密和激情的爱是(C)
+		
+		\choice{浪漫的爱}{迷恋的爱}{空洞的爱}{愚蠢的爱}
+		
+	\end{enumerate}
+	\subsection*{多选题}
+	\begin{enumerate}
+		\item 下列哪些观点符合阿瑟.阿伦和伊莱恩.阿伦提出的自我延伸模型(ABCD)
+	
+		\choice{爱情使爱人们扩展了生命的广度与深度}{爱情使爱人们的自我观念得到变化和扩展}{爱情使爱人们了解到以前不曾认识的自己}{爱情使爱人们拥有新的内心体验和新的社会角色}
+	
+		\item 下列说法正确的是(ABC)
+
+		\choice{浪漫并不是爱情的全部}{爱情给我们认知自我的机会}{成熟的爱情是以自爱为前提的}{不安全依恋类型是不能改变的}
+	
+		\item 哈赞和谢弗认为成人之间的爱情也是一种依恋过程，因为它与“婴儿—抚养者”之间的依恋十分相似。例如(ABCD)
+	
+		\choice{专注与迷恋对方}{存在紧密的身心接触}{采用baby talk的说话方式}{因为对方在身边并及时回应自己而感到安全}
+	
+		\item 下列哪些属于对爱情的误解(ABCD)
+
+		\choice{爱情中不会有冲突}{爱情意味着无限靠近}{爱情代表着无限给予}{爱情中的激情可以保持不变}
+	
+		\item 以下哪些内容属于健全的爱情心理所具有的特征(ABCD)
+	
+		\choice{独立}{付出}{尊重}{欣赏}
+	
+		\item 人类学家海伦.费舍将爱情分为哪几个阶段(ABC)
+	
+		\choice{性欲}{吸引}{依恋}{忠诚}
+	
+		\item 面对回避型的恋人，我们可以做的是(ABCD)
+	
+		\choice{给对方足够的空间，如果对方不愿接近就保持距离}{努力理解接受对方对自己的贬低化或理想化的诉求}{注意沟通情绪表达，提高对方的感受能力和表达能力}{恰当地分享自己的内心体验，逐渐增强对方对亲密关系的信任感}
+	
+		\item 下列哪些属于对爱情的误解(BC)
+	
+		\choice{完美的爱情可以存在}{一见钟情都不会有好结果}{爱情中的激情永远不会衰退}{爱情的表达既需要行动还需要语言}
+			
+		\item 下列哪些建议对于失恋者可能有所帮助(ABCD)
+		
+		\choice{冷静理智地面对分析问题出在哪里，正视失恋的事实}{避免有意无意的去翻看对方的社交网络信息}{以合理的方式宣泄自己的不良情绪，比如体育锻炼等}{采用合理化的防御机制，例如使用阿Q精神胜利法，他也没那么好}
+	\end{enumerate}
+	\subsection*{判断题}
+	\begin{enumerate}
+		\item 不可改变的，只能完全的接纳他\hfill 错误
+		
+		\item 一个人爱的能力可能受到过去经验的影响\hfill 正确
+		
+		\item 只有亲密、激情和承诺三者皆有的爱情才是好的爱情\hfill 错误 
+
+		\item 脑垂体后叶分泌的加压素与爱情的忠诚有关\hfill 正确
+
+		\item 大学生为了避免爱情中的烦恼对学业造成影响应当远离爱情\hfill 错误
+
+		\item 爱情心理学家罗伯特.斯滕伯格提到的“完美的爱”仅仅属于理论设想，现实生活中根本不存在\hfill 错误
+
+	\end{enumerate}
+\end{document}
