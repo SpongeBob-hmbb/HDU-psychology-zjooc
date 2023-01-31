@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+%                    *********************
+%                     **** 四项选择题 ****
+%                    *********************
+%      用法: \choice{ }{ }{ }{ }
+ 
+\newcommand{\fourch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{4}{@{}p{0.25\textwidth}}}(A)~#1 & (B)~#2 & (C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\twoch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(A)~#1 & (B)~#2\end{tabular}\\\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\onech}[4]{%~\hfill(\qquad)\\
+(A)~#1 \\ (B)~#2 \\ (C)~#3 \\ (D)~#4}
+ 
+\newlength\widthcha
+\newlength\widthchb
+\newlength\widthchc
+\newlength\widthchd
+\newlength\widthch
+\newlength\tabmaxwidth
+\setlength\tabmaxwidth{1\textwidth}
+\newlength\fourthtabwidth
+\setlength\fourthtabwidth{0.25\textwidth}
+\newlength\halftabwidth
+\setlength\halftabwidth{0.5\textwidth}
+ 
+\newcommand{\choice}[4]{\settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}
+    \settowidth\widthchb{BM.#2}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{CM.#3}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{DM.#4}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \ifthenelse{\widthch<\fourthtabwidth}{\fourch{#1}{#2}{#3}{#4}}
+    {\ifthenelse{\widthch<\halftabwidth\and\widthch>\fourthtabwidth}{\twoch{#1}{#2}{#3}{#4}}
+        {\onech{#1}{#2}{#3}{#4}}}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{大学生心理健康教育 \\ {第六讲}}
+\author{派大星}
+\date{\today}
+\begin{document}
+		\maketitle
+	\subsection*{单选题}
+	\begin{enumerate}
+		\item “感时花溅泪，恨别鸟惊心”反映了诗作者杜甫当时的(B)
+		
+		\choice{激情}{心境}{热情}{应激}
+			
+		\item 情绪调节ABC理论认为，情绪本身并不是有诱发事件所直接引起的，而是由经历这一事件的个体对该事件的解释和评价引起的，其中A表示(C)
+
+		\choice{个体针对诱发性事件产生的一些信念，及对这件事的一些看法解释}{自己产生的情绪和行为的结果}{诱发性事件}{以上都不对}
+		
+		\item 关于情绪，下列说法不正确的是(A)
+		
+		\choice{情绪只有人才能产生}{情绪反应了我们趋利避害的本能}{消极情绪与生存有关，接近情绪与发展有关}{情绪是一个连续体上的点而非一些离散的单元}
+		
+		\item “我没上985、211，以后找不到好工作了” ，这一想法属于(C)
+		
+		\choice{以偏概全}{非黑即白}{糟糕透顶}{个体失败}
+		
+		\item 下列哪项不属于情绪的组成部分(D)
+		
+		\choice{生理唤醒}{认知解释}{主观体验}{刺激感知}
+		
+		\item 关于运动锻炼，下列说法错误的是(D)
+		
+		\choice{运动锻炼有利于抵抗抑郁症}{跑步可以导致内分泌的分泌}{过量运动会引起横纹肌溶解}{运动锻炼可以治愈心理疾病}
+		
+		\item 下列关于抑郁症的说法错误的是(B)
+		
+		\choice{抑郁情绪不等于抑郁症}{抑郁症患者都可以被周围人察觉}{抑郁症的治愈需要自我和他人的力量}{抑郁症患者也有过度兴奋和激动的情绪}
+	\end{enumerate}
+	\subsection*{多选题}
+	\begin{enumerate}
+		\item 关于焦虑，下列说法正确的是(ABCD)
+	
+		\choice{焦虑可以是一种动力}{焦虑是一种常见情绪}{焦虑会引起消化系统紊乱}{完美主义者容易感到焦虑}
+	
+		\item 下列哪些属于情绪ABC理论提出的不合理信念(ABCD)
+	
+		\choice{我必须成功}{你是我的恋人就应该对我好}{TA不喜欢我，我是个不受欢迎的人}{碰到的种种问题都需要有一个正确、完满的答案}
+	
+		\item 我们可以如何对待“愤怒”(ABC)
+	
+		\choice{接受发怒后的结果}{接受和解但请稍等片刻}{请告诉自己有愤怒的权利}{从非语言表达开始为发怒做演练}
+	
+		\item 下列哪些属于能量宣泄法(ABCD)
+	
+		\choice{到KTV大声唱歌}{爬到山顶上喊山}{去健身房挥汗锻炼}{给好友打电话倾诉}
+		
+		\item 下列哪些属于抑郁症的表现(ABCD)
+		
+		\choice{显著失眠或嗜睡}{感到疲倦或缺乏精力}{精神运动性激越或迟缓}{无价值感或过度不适当的内疚感}
+
+	\end{enumerate}
+	\subsection*{判断题}
+	\begin{enumerate}
+		\item 对情绪的调节与管理不等于对情绪一味地抑制或压抑\hfill 正确
+		
+		\item 通过学习微表情心理学，我们每个人都可以通过微表情分析出对方的真实想法\hfill 错误
+		
+		\item 所有抑郁症患者只需要药物治疗就可以自行好转\hfill 错误
+
+		\item 一般说来，当我们的身体处于一种完全放松的状态，即肌肉松弛、呼吸均匀而缓慢时，我们的心理或精神也能相应地达到自然地放松\hfill 正确
+
+		\item 情商就是指察言观色、扩展人脉的能力\hfill 错误
+
+		\item 有些疾病的发生并不是器质性的病变，而是与精神状况不佳、情绪状态异常有关\hfill 正确
+
+		\item 情绪稳定度被看做是一个人心理成熟的重要标志	\hfill 正确
+
+		\item 如果我不能完美地做一件事，那我就干脆放弃”，这一想法属于以偏概全\hfill 错误
+	\end{enumerate}
+\end{document}
