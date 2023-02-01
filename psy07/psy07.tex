@@ -1,0 +1,124 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+%                    *********************
+%                     **** 四项选择题 ****
+%                    *********************
+%      用法: \choice{ }{ }{ }{ }
+ 
+\newcommand{\fourch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{4}{@{}p{0.25\textwidth}}}(A)~#1 & (B)~#2 & (C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\twoch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(A)~#1 & (B)~#2\end{tabular}\\\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\onech}[4]{%~\hfill(\qquad)\\
+(A)~#1 \\ (B)~#2 \\ (C)~#3 \\ (D)~#4}
+ 
+\newlength\widthcha
+\newlength\widthchb
+\newlength\widthchc
+\newlength\widthchd
+\newlength\widthch
+\newlength\tabmaxwidth
+\setlength\tabmaxwidth{1\textwidth}
+\newlength\fourthtabwidth
+\setlength\fourthtabwidth{0.25\textwidth}
+\newlength\halftabwidth
+\setlength\halftabwidth{0.5\textwidth}
+ 
+\newcommand{\choice}[4]{\settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}
+    \settowidth\widthchb{BM.#2}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{CM.#3}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{DM.#4}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \ifthenelse{\widthch<\fourthtabwidth}{\fourch{#1}{#2}{#3}{#4}}
+    {\ifthenelse{\widthch<\halftabwidth\and\widthch>\fourthtabwidth}{\twoch{#1}{#2}{#3}{#4}}
+        {\onech{#1}{#2}{#3}{#4}}}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{大学生心理健康教育 \\ {第七讲}}
+\author{派大星}
+\date{\today}
+\begin{document}
+		\maketitle
+	\subsection*{单选题}
+	\begin{enumerate}
+		\item 泰勒-本-沙哈尔博士提出，享乐主义型的人信奉(A)
+		
+		\choice{及时行乐，逃避痛苦}{实现目标就会开心}{听天由命，无可奈何}{活在当下，享受生活}
+			
+		\item 当我们在画画、打球、公开演讲、攀岩等具有挑战性且需要技术的活动中，常常有这样的体验：我们忘记了自己，没有情绪，也没有意识，只把注意力集中到我们所在做的事情上。这种全心投入时心理所能达到的完美状态，心理学家米哈里希斯赞特米哈伊称之为(A)
+
+		\choice{心流}{忘情}{巅峰体验}{注意集中}
+		
+		\item 根据泰勒-本-沙哈尔博士提出的幸福模式，哪种类型是代表了沉迷于过去，放弃现在和未来的人的(C)
+		
+		\choice{享乐主义性}{忙碌奔波型}{虚无主义性}{幸福型}
+		
+	\end{enumerate}
+	\subsection*{多选题}
+	\begin{enumerate}
+		\item 下列属于心理学家塞利格曼有关乐观的思维方式的观点有(ABCD)
+	
+		\choice{乐观的思维方式是可以学习的}{乐观的思维方式会假设导致痛苦和疾病的原因只是暂时的}{乐观的思维方式倾向于将问题归因于外部原因，而不是内部原因}{乐观的思维方式会将不愉快的经历归因为具体的原因，而不是盲目扩大范围}
+	
+		\item 下列哪些项目不利于快乐地学习(ABC)
+
+		\choice{强调学习结果高于建立学习兴趣}{学习任务难度高而能力不足}{把学校作业当成工作}{把学习视为一种特权}
+	
+		\item 泰勒-本-沙哈尔博士指出，人类最大的动力，来自于对生命意义的追求。如果想要一个充实而幸福生活，就必须去追求哪些价值(AB)
+	
+		\choice{快乐}{意义}{幸福}{成功}
+	
+		\item 根据MPS法，一个适合自己的工作应满足那些要求(ABCD)
+
+		\choice{可以使我们快乐}{可以使我们幸福}{可以发挥我们优势}{可以为我们带来未来的意义}
+	
+		\item 心理学家塞利格曼提出了一个影响主观幸福感的公式：$ H=S+C+V $，根据该公式，我们知道影响主观幸福感的因素有(ABCD)
+	
+		\choice{生活环境}{幸福的范围}{对未来的乐观和期望}{对过去经验的感恩与宽恕}
+	
+		\item 自我和谐的目标是指与个体的兴趣、爱好及核心价值、信仰相一致的目标。追求自我和谐目标的人，通常不但更成功，而且比别人更幸福。请问，下列哪些内容涉及到自我和谐目标的设定(ABCD)
+	
+		\choice{长期目标}{短期目标}{行动计划}{拟定行程表}
+	
+		\item 下列哪些是可以增进我们幸福感的方法(ABCD)
+	
+		\choice{探索自我}{简化生活}{设定和谐目标}{保持积极的心理状态}
+	
+		\item 下列哪些是对幸福的误解(AC)
+	
+		\choice{谈钱伤感情，谈钱不幸福}{幸福更多的取决于你怎么想，而不在于你有什么}{幸福就是活在当下，也就是享受此时此刻，无需想太多}{与不愉快或痛苦的过去和解，会使我们获得平静、满足和幸福}
+
+	\end{enumerate}
+	\subsection*{判断题}
+	\begin{enumerate}
+		\item 金钱既能增加幸福，也能减少幸福\hfill 正确
+		
+		\item 幸福是个比较级，知足才能常乐。幸福又不是比较级，快乐源于内心\hfill 正确
+		
+		\item 完美不等同于幸福\hfill 正确
+
+		\item 泰勒-本-沙哈尔博士认为，忙碌奔波型的人信奉的是“到达谬论”，即只有在达成一个有价值的目标后才可以得到幸福\hfill 正确
+
+		\item 活在当下是关注并享受此时此刻，不需要想太多\hfill 错误
+
+		\item 谈钱伤感情，谈钱不幸福\hfill 错误
+
+		\item 与不愉快或痛苦的过去和解会使我们获得平静、满足和幸福\hfill 正确
+
+		\item 幸福取决于你怎么想，而不在于你有些什么\hfill 正确
+
+		\item 幸福的定义是因人而异的，获得幸福的方式也千差万别\hfill 正确
+
+	\end{enumerate}
+\end{document}
