@@ -1,0 +1,155 @@
+\documentclass{article}
+\usepackage{ifthen}
+\usepackage{array}
+\usepackage{ctex}
+\usepackage{xeCJK}
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+%                    *********************
+%                     **** 四项选择题 ****
+%                    *********************
+%      用法: \choice{ }{ }{ }{ }
+ 
+\newcommand{\fourch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{4}{@{}p{0.25\textwidth}}}(A)~#1 & (B)~#2 & (C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\twoch}[4]{%~\hfill(\qquad)\\
+\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(A)~#1 & (B)~#2\end{tabular}\\\begin{tabular}{*{2}{@{}p{0.5\textwidth}}}(C)~#3 & (D)~#4\end{tabular}}
+\newcommand{\onech}[4]{%~\hfill(\qquad)\\
+(A)~#1 \\ (B)~#2 \\ (C)~#3 \\ (D)~#4}
+ 
+\newlength\widthcha
+\newlength\widthchb
+\newlength\widthchc
+\newlength\widthchd
+\newlength\widthch
+\newlength\tabmaxwidth
+\setlength\tabmaxwidth{1\textwidth}
+\newlength\fourthtabwidth
+\setlength\fourthtabwidth{0.25\textwidth}
+\newlength\halftabwidth
+\setlength\halftabwidth{0.5\textwidth}
+ 
+\newcommand{\choice}[4]{\settowidth\widthcha{AM.#1}\setlength{\widthch}{\widthcha}
+    \settowidth\widthchb{BM.#2}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{CM.#3}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \settowidth\widthchb{DM.#4}
+    \ifthenelse{\widthch<\widthchb}{\setlength{\widthch}{\widthchb}}{}
+    \ifthenelse{\widthch<\fourthtabwidth}{\fourch{#1}{#2}{#3}{#4}}
+    {\ifthenelse{\widthch<\halftabwidth\and\widthch>\fourthtabwidth}{\twoch{#1}{#2}{#3}{#4}}
+        {\onech{#1}{#2}{#3}{#4}}}}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\title{大学生心理健康教育 \\ {在线课程考查}}
+\author{派大星}
+\date{\today}
+\begin{document}
+		\maketitle
+	\subsection*{判断题}
+	\begin{enumerate}
+		\item 健康的人就是没有任何心理异常现象的人\hfill 错误
+		
+		\item 心理的正常和异常在人群中的分布是一个连续体，并不存在把两者完全分开的绝对标准\hfill 正确
+		
+		\item 保密原则是心理咨询的一个基本守则，所以所有情况下，咨询师都应该遵守\hfill 错误
+
+		\item 精神病就是神经病\hfill 错误
+
+		\item 癌症、高血压、心脏病等都是生理疾病，和心理没有关系\hfill 错误
+
+		\item 心理咨询的实质是“助人自助”\hfill 正确
+
+		\item “心理健康”和“心理不健康”都属于“心理正常”的范围之内 \hfill 正确
+
+		\item “我看到了镜子中的我”，前一个“我”是指“主我”，而后一个“我”则是指“宾我”\hfill 正确
+
+		\item 认识自己是一个我们在青春期就能完成的任务\hfill 错误
+		
+		\item 在人际交往中，个性吸引力和能力吸引力很重要，外表吸引力可有可无\hfill 错误
+		
+		\item 再好的朋友之间也需要适当的保持距离\hfill 正确
+		
+		\item 费力最小原则指人们总是希望用最小付出换取最大回报的倾向\hfill 正确
+		
+		\item 嫉妒具有善意的一面，也具有恶意的一面\hfill 正确
+		
+		\item 美国社会学家霍曼斯认为人际交往的本质是一种社会交换过程\hfill 正确
+		
+		\item 在倾听他人时，为了表达关注，我们需要紧紧地盯住对方的双眼不放松\hfill 错误
+		
+		\item 倾听就是一直听对方讲话\hfill 错误
+		
+		\item 在爱情三角形理论中，亲密是认知性的，激情是情感性的，而承诺是动机性的\hfill 错误
+		
+		\item 脑垂体后叶分泌的加压素与爱情的忠诚有关\hfill 错误
+		
+		\item 大学生为了避免爱情中的烦恼对学业造成影响应当远离爱情\hfill 错误
+		
+		\item 性冲动是一种不恰当的冲动，大学生必须予以避免和克服\hfill 
+		错误
+		\item 爱情心理学家罗伯特.斯滕伯格提到的“完美的爱”仅仅属于理论设想，现实生活中根本不存在\hfill 错误
+		
+		\item 谈恋爱会上瘾是基于多巴胺这一爱情激素的作用\hfill 正确
+		
+		\item 人类的依恋主要有三种类型：安全型依恋、回避型依恋和谨慎型依恋\hfill 错误
+		
+		\item 动物也会学习，与人的学习在本质上并无差异\hfill 错误
+		
+		\item 大学阶段的学习考虑更多的是掌握专业知识与能力，培养自身的全面素质\hfill 正确
+		
+		\item 我们的认知资源容量是有限的，所以人不可能同时完成两项任务\hfill 错误
+		
+		\item 经典条件反射会应用于广告营销中，例如俊男靓女的照片往往会引起某些性唤醒\hfill 正确
+		
+		\item 自控力比智商能更好地预测一个人的成功\hfill 正确
+		
+		\item 记密码锁的密码往往要比记身份证的密码更难，因为在记忆没有意义的信息时要比有意义的信息更容易受到干扰\hfill 正确
+		
+		\item 通常情况下，舒适安全的宿舍环境更容易让注意力集中\hfill 错误
+		
+		\item 大学里学到的有些知识可能这辈子都用不上，所以这些知识就不需要非常认真地学\hfill 错误
+		
+		\item 对情绪的调节与管理不等于对情绪一味地抑制或压抑\hfill 正确
+		
+		\item 所有抑郁症患者只需要药物治疗就可以自行好转\hfill 错误
+		
+		\item 测谎仪通过监测一个人的呼吸、汗腺及心跳等不能主观控制的生理反应来推测其是否说谎并作为定案证据\hfill 错误
+		
+		\item 科学规律的运动锻炼有助于我们对抗抑郁\hfill 正确
+		
+		\item 情商就是指察言观色、扩展人脉的能力\hfill 错误
+		
+		\item “如果我不能完美地做一件事，那我就干脆放弃”，这一想法属于以偏概全\hfill 错误
+		
+		\item 有些疾病的发生并不是器质性的病变，而是与精神状况不佳、情绪状态异常有关\hfill 正确
+		
+		\item 情绪稳定度被看做是一个人心理成熟的重要标志\hfill 正确
+		
+		\item 金钱既能增加幸福，也能减少幸福\hfill 正确
+		
+		\item 定期写日记是增进个人幸福感的一种方法\hfill 正确
+		
+		\item 幸福是个比较级，知足才能常乐。幸福又不是比较级，快乐源于内心\hfill 正确
+		
+		\item 时间上的富裕比物质上的富裕，更可能给人更多的幸福感\hfill 正确
+		
+		\item 泰勒-本-沙哈尔博士认为，忙碌奔波型的人信奉的是“到达谬论”，即只有在达成一个有价值的目标后才可以得到幸福\hfill 正确 
+		
+		\item 活在当下是关注并享受此时此刻，不需要想太多\hfill 错误
+		
+		\item 无论是积极事件还是消极事件，它们对主观幸福感的影响很少是长期的\hfill 正确
+		
+		\item 与不愉快或痛苦的过去和解会使我们获得平静、满足和幸福\hfill 正确
+		
+		\item “less is more”代表简化生活会帮助我们获得幸福\hfill 正确
+		
+		\item 幸福取决于你怎么想，而不在于你有些什么\hfill 正确
+		
+		\item 幸福的定义是因人而异的，获得幸福的方式也千差万别\hfill 正确
+	\end{enumerate}
+\end{document}
